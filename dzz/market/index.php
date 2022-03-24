@@ -39,7 +39,7 @@ $order = 'ORDER BY disp';
 $start = ($page - 1) * $perpage;
 $apps = array();
 //system=2代表系统自带安装应用不能卸载  notdelete=1表示不能删除的，不能删除的直接不可见
-$sql = 'system!=2 and available>0 and hideInMarket<1 and notdelete<1';
+$sql = '`system`!=2 and available>0 and hideInMarket<1 and notdelete<1';
 if ($keyword) {
 	$sql .= " and (appname like '%$keyword%' or vendor like '%$keyword%')";
 } elseif ($tagid) {
